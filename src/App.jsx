@@ -1,19 +1,25 @@
 import { useState, useEffect } from "react";
 import { supabase } from "./supabase.js";
 
-// ── Photos ── upload these to your Supabase Storage bucket called "photos"
-// OR replace with your own image URLs (Cloudinary, etc.)
-// For now we use direct paths — Vite will bundle files placed in /public/photos/
 const PHOTOS = [
   { id: 1, src: "/photos/villa-exterior.jpeg", alt: "Modern villa exterior with wood cladding", category: "Architecture" },
-  { id: 2, src: "/photos/entrance-hall.jpeg", alt: "Entrance hall with fluted wood wall panels", category: "Interior" },
-  { id: 3, src: "/photos/hidden-door.jpeg", alt: "Hidden door integrated in fluted wood wall", category: "Interior" },
-  { id: 4, src: "/photos/black-wardrobe.jpeg", alt: "Bespoke matte black wardrobe under pitched roof", category: "Furniture" },
-  { id: 5, src: "/photos/wine-cellar-outside.jpeg", alt: "Custom wine cellar with illuminated shelving", category: "Wine Cellar" },
-  { id: 6, src: "/photos/wine-cellar-inside.jpeg", alt: "Wine cellar interior — full view", category: "Wine Cellar" },
-  { id: 7, src: "/photos/kitchen.jpeg", alt: "Contemporary open kitchen — black & white", category: "Kitchen" },
-  { id: 8, src: "/photos/bathroom.jpeg", alt: "Powder room with fluted wood walls & stone basin", category: "Bathroom" },
-  { id: 9, src: "/photos/wine-cellar-angle.jpeg", alt: "Wine cellar angled view with slatted ceiling", category: "Wine Cellar" },
+  { id: 2, src: "/photos/front-door.jpeg", alt: "Monumental bespoke front door in solid wood", category: "Architecture" },
+  { id: 3, src: "/photos/entrance-hall.jpeg", alt: "Entrance hall with fluted wood wall panels", category: "Interior" },
+  { id: 4, src: "/photos/hidden-door.jpeg", alt: "Hidden door integrated in fluted wood wall", category: "Interior" },
+  { id: 5, src: "/photos/living-room.jpeg", alt: "Living room with custom wood shelving & fireplace", category: "Interior" },
+  { id: 6, src: "/photos/dining-room.jpeg", alt: "Dining room with wood wall panels & marble console", category: "Interior" },
+  { id: 7, src: "/photos/round-table.jpeg", alt: "Custom round dining table with upholstered chairs", category: "Furniture" },
+  { id: 8, src: "/photos/black-wardrobe.jpeg", alt: "Bespoke matte black wardrobe under pitched roof", category: "Furniture" },
+  { id: 9, src: "/photos/black-unit-open.jpeg", alt: "Bespoke black joinery unit — open view", category: "Furniture" },
+  { id: 10, src: "/photos/loft-space.jpeg", alt: "Full loft interior with custom black joinery", category: "Interior" },
+  { id: 11, src: "/photos/window-bench.jpeg", alt: "Built-in window bench with black joinery", category: "Interior" },
+  { id: 12, src: "/photos/wood-beams.jpeg", alt: "Custom oak ceiling beams — architectural detail", category: "Architecture" },
+  { id: 13, src: "/photos/kitchen.jpeg", alt: "Contemporary open kitchen — black & white", category: "Kitchen" },
+  { id: 14, src: "/photos/kitchen2.jpeg", alt: "Bespoke kitchen with island & pendant lights", category: "Kitchen" },
+  { id: 15, src: "/photos/wine-cellar-outside.jpeg", alt: "Custom wine cellar with illuminated shelving", category: "Wine Cellar" },
+  { id: 16, src: "/photos/wine-cellar-inside.jpeg", alt: "Wine cellar interior — full view", category: "Wine Cellar" },
+  { id: 17, src: "/photos/wine-cellar-angle.jpeg", alt: "Wine cellar angled view with slatted ceiling", category: "Wine Cellar" },
+  { id: 18, src: "/photos/bathroom.jpeg", alt: "Powder room with fluted wood walls & stone basin", category: "Bathroom" },
 ];
 
 const NAV_LINKS = ["Home", "About", "Projects", "Contact"];
@@ -71,7 +77,6 @@ export default function App() {
     <div style={S.root}>
       <style>{css}</style>
 
-      {/* LIGHTBOX */}
       {lightbox !== null && (
         <div style={S.lightboxOverlay} onClick={() => setLightbox(null)}>
           <button style={S.lightboxClose}>✕</button>
@@ -80,7 +85,6 @@ export default function App() {
         </div>
       )}
 
-      {/* NAV */}
       <nav style={{ ...S.nav, ...(scrolled ? S.navScrolled : {}) }}>
         <div style={S.navInner}>
           <div style={S.logo}>
@@ -112,17 +116,16 @@ export default function App() {
         )}
       </nav>
 
-      {/* HERO */}
       <section id="home" style={S.hero}>
         <div style={S.heroOverlay} />
-        <img src={PHOTOS[0].src} alt="Woodline – Bespoke Joinery Lebanon" style={S.heroBg} />
+        <img src={PHOTOS[1].src} alt="Woodline – Bespoke Joinery Lebanon" style={S.heroBg} />
         <div style={S.heroContent} className="hero-anim">
-          <p style={S.eyebrow}>Custom Made Furniture · Souk Mosbeh, Lebanon</p>
+          <p style={S.eyebrow}>30 Years of Expertise · Souk Mosbeh, Lebanon</p>
           <h1 style={S.heroTitle}>
             Crafted wood.<br /><em>Elevated living.</em>
           </h1>
           <p style={S.heroSub}>
-            Every project is a collaboration. We design and build custom furniture and joinery that transforms spaces into lasting works of craftsmanship.
+            Three decades of bespoke joinery. We design and build custom furniture that transforms spaces into lasting works of craftsmanship.
           </p>
           <div style={S.heroCtas}>
             <button onClick={() => scrollTo("Projects")} style={S.ctaPrimary} className="cta-hover">View Our Work</button>
@@ -135,12 +138,11 @@ export default function App() {
         </div>
       </section>
 
-      {/* PILLARS */}
       <section style={S.pillars}>
         {[
           { icon: "◈", title: "Bespoke Design", desc: "Every piece is designed from scratch to suit your space, lifestyle, and vision — no off-the-shelf compromises." },
           { icon: "✦", title: "Premium Materials", desc: "We work with fine-grain hardwoods, solid oak, walnut, and cedar, selected for beauty and longevity." },
-          { icon: "◎", title: "Expert Craftsmanship", desc: "Our craftsmen bring decades of experience to every joint, surface, and finish — built to last generations." },
+          { icon: "◎", title: "30 Years of Mastery", desc: "Three decades of expertise in bespoke joinery — every joint, surface, and finish built to last generations." },
         ].map(v => (
           <div key={v.title} style={S.pillar} className="pillar-card">
             <span style={S.pillarIcon}>{v.icon}</span>
@@ -150,12 +152,11 @@ export default function App() {
         ))}
       </section>
 
-      {/* ABOUT */}
       <section id="about" style={S.about}>
         <div style={S.aboutImgWrap}>
-          <img src={PHOTOS[1].src} alt="Woodline interior" style={S.aboutImg} />
+          <img src={PHOTOS[2].src} alt="Woodline interior" style={S.aboutImg} />
           <div style={S.aboutBadge}>
-            <span style={S.badgeNum}>15+</span>
+            <span style={S.badgeNum}>30+</span>
             <span style={S.badgeTxt}>Years of expertise</span>
           </div>
         </div>
@@ -163,13 +164,13 @@ export default function App() {
           <p style={S.eyebrowDark}>Our Story</p>
           <h2 style={S.sectionTitle}>Born from a<br /><em>passion for wood</em></h2>
           <p style={S.para}>
-            Woodline was founded on a single belief: that a well-crafted space changes how you live. Based in Souk Mosbeh, Lebanon, we have spent over 15 years transforming residential and commercial interiors with bespoke joinery that balances artistry with function.
+            Woodline was founded on a single belief: that a well-crafted space changes how you live. Based in Souk Mosbeh, Lebanon, we have spent over 30 years transforming residential and commercial interiors with bespoke joinery that balances artistry with function.
           </p>
           <p style={S.para}>
             Every project begins with listening. We take time to understand your vision, your space, and your daily rhythms — then we design, build, and install furniture that feels like it was always meant to be there.
           </p>
           <div style={S.stats}>
-            {[["500+", "Projects completed"], ["100%", "Custom-made"], ["15+", "Years in Lebanon"]].map(([n, l]) => (
+            {[["500+", "Projects completed"], ["100%", "Custom-made"], ["30+", "Years in Lebanon"]].map(([n, l]) => (
               <div key={n} style={S.stat}>
                 <span style={S.statNum}>{n}</span>
                 <span style={S.statLbl}>{l}</span>
@@ -179,7 +180,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* PROJECTS */}
       <section id="projects" style={S.projects}>
         <div style={S.projectsHead}>
           <p style={S.eyebrowDark}>Portfolio</p>
@@ -209,7 +209,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* CONTACT */}
       <section id="contact" style={S.contact}>
         <div style={S.contactLeft}>
           <p style={S.eyebrowLight}>Get in Touch</p>
@@ -225,9 +224,7 @@ export default function App() {
             ].map(({ icon, label, href }) => (
               <div key={label} style={S.contactRow}>
                 <span style={S.contactIcon}>{icon}</span>
-                {href
-                  ? <a href={href} style={S.contactLink}>{label}</a>
-                  : <span style={S.contactLabel}>{label}</span>}
+                {href ? <a href={href} style={S.contactLink}>{label}</a> : <span style={S.contactLabel}>{label}</span>}
               </div>
             ))}
           </div>
@@ -270,13 +267,12 @@ export default function App() {
         </div>
       </section>
 
-      {/* FOOTER */}
       <footer style={S.footer}>
         <div style={S.footerLogo}>
           <span style={S.logoMark}>W</span>
           <span style={{ ...S.logoName, color: "#C8B99A" }}>OODLINE</span>
         </div>
-        <p style={S.footerTag}>Custom Made Furniture · Handcrafted · Souk Mosbeh, Lebanon</p>
+        <p style={S.footerTag}>Custom Made Furniture · 30 Years of Expertise · Souk Mosbeh, Lebanon</p>
         <p style={S.footerCopy}>© {new Date().getFullYear()} Woodline. All rights reserved.</p>
       </footer>
     </div>
@@ -396,7 +392,6 @@ const css = `
   .form-input:focus { border-color:#A0714F !important; }
   @media (max-width:900px) { .nav-links{display:none!important} .burger{display:flex!important} }
   @media (max-width:768px) {
-    #home div { padding:0 1.5rem!important; margin-left:0!important; }
     #projects .grid { grid-template-columns:1fr 1fr!important; }
     #contact { grid-template-columns:1fr!important; }
     #contact > div { padding:3rem 1.5rem!important; }
