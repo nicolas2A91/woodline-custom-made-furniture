@@ -33,7 +33,7 @@ const T = {
   en: {
     nav: ["Home","About","Projects","Contact"],
     cta: "Get a Quote",
-    eyebrow: "30 Years of Expertise · Souk Mosbeh, Lebanon",
+    eyebrow: "30 Years of Expertise · Zouk Mosbeh, Lebanon",
     heroTitle: ["Crafted wood.", "Elevated living."],
     heroSub: "Three decades of bespoke joinery. We design and build custom furniture that transforms spaces into lasting works of craftsmanship.",
     btn1: "View Our Work", btn2: "Request a Quote",
@@ -41,7 +41,7 @@ const T = {
     p2title: "Premium Materials", p2desc: "We work with fine-grain hardwoods, solid oak, walnut, and cedar, selected for beauty and longevity.",
     p3title: "30 Years of Mastery", p3desc: "Three decades of expertise in bespoke joinery — every joint, surface, and finish built to last generations.",
     aboutEye: "Our Story", aboutTitle: ["Born from a", "passion for wood"],
-    aboutP1: "Woodline was founded on a single belief: that a well-crafted space changes how you live. Based in Souk Mosbeh, Lebanon, we have spent over 30 years transforming residential and commercial interiors with bespoke joinery that balances artistry with function.",
+    aboutP1: "Woodline was founded on a single belief: that a well-crafted space changes how you live. Based in Zouk Mosbeh, Lebanon, we have spent over 30 years transforming residential and commercial interiors with bespoke joinery that balances artistry with function.",
     aboutP2: "Every project begins with listening. We take time to understand your vision, your space, and your daily rhythms — then we design, build, and install furniture that feels like it was always meant to be there.",
     stats: [["500+","Projects completed"],["100%","Custom-made"],["30+","Years in Lebanon"]],
     badgeTxt: "Years of expertise",
@@ -54,14 +54,14 @@ const T = {
     send: "Send My Request →", sending: "Sending…",
     successTxt: "Message sent! We'll reply within 24 hours.",
     errorTxt: "Something went wrong. Please try again or call us directly.",
-    footerTag: "Custom Made Furniture · 30 Years of Expertise · Souk Mosbeh, Lebanon",
+    footerTag: "Custom Made Furniture · 30 Years of Expertise · Zouk Mosbeh, Lebanon",
     copy: `© ${new Date().getFullYear()} Woodline. All rights reserved.`,
     dir: "ltr",
   },
   fr: {
     nav: ["Accueil","À propos","Réalisations","Contact"],
     cta: "Devis Gratuit",
-    eyebrow: "30 Ans d'Expertise · Souk Mosbeh, Liban",
+    eyebrow: "30 Ans d'Expertise · Zouk Mosbeh, Liban",
     heroTitle: ["Bois façonné.", "Art de vivre."],
     heroSub: "Trois décennies de menuiserie sur mesure. Nous concevons et fabriquons des meubles uniques qui transforment chaque espace en œuvre d'artisanat.",
     btn1: "Voir nos réalisations", btn2: "Demander un devis",
@@ -69,7 +69,7 @@ const T = {
     p2title: "Matériaux Premium", p2desc: "Nous travaillons avec des bois nobles — chêne massif, noyer, cèdre — sélectionnés pour leur beauté et leur durabilité.",
     p3title: "30 Ans de Maîtrise", p3desc: "Trois décennies d'expertise en menuiserie sur mesure — chaque joint, surface et finition conçu pour durer des générations.",
     aboutEye: "Notre Histoire", aboutTitle: ["Né d'une", "passion du bois"],
-    aboutP1: "Woodline est né d'une conviction : un espace bien conçu change la façon dont on vit. Basés à Souk Mosbeh, au Liban, nous transformons depuis plus de 30 ans des intérieurs résidentiels et commerciaux avec une menuiserie sur mesure alliant art et fonction.",
+    aboutP1: "Woodline est né d'une conviction : un espace bien conçu change la façon dont on vit. Basés à Zouk Mosbeh, au Liban, nous transformons depuis plus de 30 ans des intérieurs résidentiels et commerciaux avec une menuiserie sur mesure alliant art et fonction.",
     aboutP2: "Chaque projet commence par une écoute attentive. Nous prenons le temps de comprendre votre vision, votre espace et vos habitudes — puis nous concevons, fabriquons et installons des meubles qui semblent avoir toujours été là.",
     stats: [["500+","Projets réalisés"],["100%","Sur mesure"],["30+","Ans au Liban"]],
     badgeTxt: "Ans d'expertise",
@@ -82,7 +82,7 @@ const T = {
     send: "Envoyer ma demande →", sending: "Envoi…",
     successTxt: "Message envoyé ! Nous vous répondrons sous 24h.",
     errorTxt: "Une erreur s'est produite. Veuillez réessayer ou nous appeler directement.",
-    footerTag: "Mobilier sur mesure · 30 Ans d'Expertise · Souk Mosbeh, Liban",
+    footerTag: "Mobilier sur mesure · 30 Ans d'Expertise · Zouk Mosbeh, Liban",
     copy: `© ${new Date().getFullYear()} Woodline. Tous droits réservés.`,
     dir: "ltr",
   },
@@ -334,7 +334,7 @@ export default function App() {
             {[
               { icon:"☎", label:"+961 3 011 175", href:"tel:+9613011175" },
               { icon:"✉", label:"fadi-kassabian@hotmail.com", href:"mailto:fadi-kassabian@hotmail.com" },
-              { icon:"⌂", label:"Souk Mosbeh, Lebanon", href:null },
+              { icon:"⌂", label:"Zouk Mosbeh, Lebanon", href:null },
             ].map(({ icon, label, href }) => (
               <div key={label} style={{ ...S.contactRow, ...(isRtl ? {flexDirection:"row-reverse"} : {}) }}>
                 <span style={S.contactIcon}>{icon}</span>
