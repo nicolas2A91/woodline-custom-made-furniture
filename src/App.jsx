@@ -68,10 +68,10 @@ const T = {
     contactEye: "Get in Touch", contactTitle: ["Your project,","our passion"],
     contactIntro: "Tell us about your project and we'll get back to you within 24 hours with a first proposal.",
     fields: [
-      { key:"name",    label:"Your Name",         ph:"John Smith"                                              },
-      { key:"email",   label:"Email Address",     ph:"john@example.com"                                       },
-      { key:"phone",   label:"Phone (optional)",  ph:"+961 X XXX XXX"                                         },
-      { key:"message", label:"Describe Your Project", ph:"Type of furniture, dimensions, wood species, timeline..." },
+      { key:"name",    label:"Your Name",            ph:""  },
+      { key:"email",   label:"Email Address",        ph:""  },
+      { key:"phone",   label:"Phone (optional)",     ph:""  },
+      { key:"message", label:"Describe Your Project",ph:""  },
     ],
     send: "Send My Request →", sending: "Sending…",
     successTxt: "Message sent! We'll reply within 24 hours.",
@@ -113,10 +113,10 @@ const T = {
     contactEye: "Contactez-nous", contactTitle: ["Votre projet,","notre passion"],
     contactIntro: "Décrivez-nous votre projet et nous vous répondrons sous 24h avec une première proposition.",
     fields: [
-      { key:"name",    label:"Votre Nom",             ph:"Jean Dupont"                                                   },
-      { key:"email",   label:"Email",                 ph:"jean@exemple.fr"                                               },
-      { key:"phone",   label:"Téléphone (optionnel)", ph:"+961 X XXX XXX"                                                },
-      { key:"message", label:"Décrivez votre projet", ph:"Type de meuble, dimensions, essence de bois, délai..."         },
+      { key:"name",    label:"Votre Nom",             ph:""  },
+      { key:"email",   label:"Email",                 ph:""  },
+      { key:"phone",   label:"Téléphone (optionnel)", ph:""  },
+      { key:"message", label:"Décrivez votre projet", ph:""  },
     ],
     send: "Envoyer ma demande →", sending: "Envoi…",
     successTxt: "Message envoyé ! Nous vous répondrons sous 24h.",
@@ -158,10 +158,10 @@ const T = {
     contactEye: "تواصل معنا", contactTitle: ["مشروعك،","شغفنا"],
     contactIntro: "أخبرنا عن مشروعك وسنرد عليك خلال ٢٤ ساعة بأول اقتراح.",
     fields: [
-      { key:"name",    label:"اسمك",                  ph:"محمد علي"                                                 },
-      { key:"email",   label:"البريد الإلكتروني",    ph:"example@mail.com"                                         },
-      { key:"phone",   label:"الهاتف (اختياري)",     ph:"+961 X XXX XXX"                                           },
-      { key:"message", label:"صف مشروعك",            ph:"نوع الأثاث، الأبعاد، نوع الخشب، الموعد النهائي..."       },
+      { key:"name",    label:"اسمك",                  ph:""  },
+      { key:"email",   label:"البريد الإلكتروني",    ph:""  },
+      { key:"phone",   label:"الهاتف (اختياري)",     ph:""  },
+      { key:"message", label:"صف مشروعك",            ph:""  },
     ],
     send: "إرسال طلبي ←", sending: "جارٍ الإرسال…",
     successTxt: "تم إرسال رسالتك! سنرد خلال ٢٤ ساعة.",
@@ -387,13 +387,25 @@ export default function App() {
         setSlideIdx(i => (i + 1) % HERO_SLIDES.length);
         setSlideVisible(true);
       }, 200);
-    }, 5500);
+    }, 10000);
     return () => clearInterval(interval);
+  }, []);
+
+  /* ── Back-button support ── */
+  useEffect(() => {
+    const onPopState = (e) => {
+      const idx = e.state?.section ?? 0;
+      setActiveNav(idx);
+      document.getElementById(sectionIds[idx])?.scrollIntoView({ behavior: "smooth" });
+    };
+    window.addEventListener("popstate", onPopState);
+    return () => window.removeEventListener("popstate", onPopState);
   }, []);
 
   const scrollTo = (idx) => {
     setActiveNav(idx);
     setMenuOpen(false);
+    window.history.pushState({ section: idx }, "", "#" + sectionIds[idx]);
     document.getElementById(sectionIds[idx])?.scrollIntoView({ behavior: "smooth" });
   };
 
@@ -627,45 +639,6 @@ export default function App() {
               </div>
             </div>
           ))}
-        </div>
-      </section>
-
-      {/* ══════════════════════════════════════════════════════
-          TESTIMONIALS
-      ══════════════════════════════════════════════════════ */}
-      <section style={{ background:C.creamLight, padding:"7rem 2rem" }} aria-label="Testimonials">
-        <div style={{ maxWidth:1280, margin:"0 auto" }}>
-          <div style={{ textAlign:"center", marginBottom:"3.5rem" }} className="reveal">
-            <p style={{ fontSize:11, letterSpacing:4, textTransform:"uppercase", color:C.wood, marginBottom:"1rem", fontWeight:400 }}>{t.testimonialEye}</p>
-            <h2 style={{ fontSize:"clamp(1.8rem,3.5vw,2.8rem)", fontWeight:700, color:C.woodDeep, lineHeight:1.15 }}>{t.testimonialTitle}</h2>
-          </div>
-          <div style={{ display:"grid", gridTemplateColumns:"repeat(3,1fr)", gap:"2rem" }} className="testi-grid">
-            {t.testimonials.map((testi, i) => (
-              <div key={i} style={{ background:"#fff", padding:"2.5rem", boxShadow:"0 4px 24px rgba(28,22,16,0.06)", textAlign: isRtl ? "right" : "left" }} className="testi-card reveal" itemScope itemType="https://schema.org/Review">
-                <div className="stars">★★★★★</div>
-                <p style={{ fontSize:16, lineHeight:1.85, color:C.muted, fontStyle:"italic", margin:"1.25rem 0 1.5rem", fontWeight:300 }} itemProp="reviewBody">"{testi.text}"</p>
-                <div style={{ display:"flex", alignItems:"center", gap:"0.75rem", flexDirection: isRtl ? "row-reverse" : "row" }}>
-                  <div style={{ width:40, height:40, borderRadius:"50%", background:C.wood, display:"flex", alignItems:"center", justifyContent:"center", color:C.cream, fontWeight:700, fontSize:16 }}>{testi.name[0]}</div>
-                  <div>
-                    <p style={{ fontSize:14, fontWeight:600, color:C.woodDeep, letterSpacing:1 }} itemProp="author">{testi.name}</p>
-                    <p style={{ fontSize:12, color:C.muted, letterSpacing:1 }}>{testi.location}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-          {/* Trust badges */}
-          <div style={{ display:"flex", gap:"3rem", justifyContent:"center", marginTop:"4rem", flexWrap:"wrap" }} className="reveal">
-            {[["500+", lang === "ar" ? "مشروع منجز" : lang === "fr" ? "Projets Réalisés" : "Projects Completed"],
-              ["30+",  lang === "ar" ? "عاماً من الخبرة" : lang === "fr" ? "Ans d'Expertise" : "Years of Expertise"],
-              ["100%", lang === "ar" ? "مخصص بالكامل" : lang === "fr" ? "Sur Mesure" : "Custom Made"],
-              ["★ 5/5", lang === "ar" ? "تقييم العملاء" : lang === "fr" ? "Note Client" : "Client Rating"]].map(([num, lbl]) => (
-              <div key={num} style={{ textAlign:"center" }}>
-                <span style={{ fontSize:32, fontWeight:700, color:C.wood, fontStyle:"italic", display:"block" }}>{num}</span>
-                <span style={{ fontSize:12, letterSpacing:2, color:C.muted, textTransform:"uppercase" }}>{lbl}</span>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
