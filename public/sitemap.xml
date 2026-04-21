@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- ══ English (default) ══ -->
+  <url>
+    <loc>https://www.woodline.lb/</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.woodline.lb/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.woodline.lb/fr"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.woodline.lb/ar"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.woodline.lb/"/>
+
+    <!-- Architecture -->
+    <image:image>
+      <image:loc>https://www.woodline.lb/photos/villa-exterior.jpeg</image:loc>
+      <image:title>Woodline custom villa exterior with bespoke woodwork, Zouk Mosbeh Lebanon</image:title>
+      <image:caption>Custom made villa exterior – Woodline, Zouk Mosbeh, Lebanon</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.woodline.lb/photos/front-door.jpeg</image:loc>
+      <image:title>Woodline handcrafted solid wood front door, custom made in Lebanon</image:title>
+      <image:caption>Bespoke solid wood front door – Woodline Lebanon</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.woodline.lb/photos/wood-beams.jpeg</image:loc>
+      <image:title>Exposed custom wood beams ceiling crafted by Woodline, Lebanon</image:title>
+      <image:caption>Custom exposed wood beams – Woodline Lebanon</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.woodline.lb/photos/open-space.jpeg</image:loc>
+      <image:title>Bespoke open-plan architectural joinery by Woodline, Lebanon</image:title>
+      <image:caption>Open-plan custom joinery – Woodline Lebanon</image:caption>
+    </image:image>
+
+    <!-- Interior -->
+    <image:image>
+      <image:loc>https://www.woodline.lb/photos/entrance-hall.jpeg</image:loc>
+      <image:title>Custom entrance hall joinery with bespoke woodwork by Woodline Lebanon</image:title>
+      <image:caption>Bespoke entrance hall – Woodline Lebanon</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.woodline.lb/photos/hidden-door.jpeg</image:loc>
+      <image:title>Woodline bespoke hidden door integrated into custom wall panelling, Lebanon</image:title>
+      <image:caption>Custom hidden door in wall panelling – Woodline Lebanon</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.woodline.lb/photos/living-room.jpeg</image:loc>
+      <image:title>Luxury custom living room interior designed and crafted by Woodline Lebanon</image:title>
+      <image:caption>Custom living room interior – Woodline Lebanon</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.woodline.lb/photos/living-room2.jpeg</image:loc>
+      <image:title>Bespoke living room furniture and wall units by Woodline, Zouk Mosbeh Lebanon</image:title>
+      <image:caption>Bespoke living room furniture – Woodline Lebanon</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.woodline.lb/photos/dining-room.jpeg</image:loc>
+      <image:title>Custom dining room joinery and furniture crafted by Woodline Lebanon</image:title>
+      <image:caption>Custom dining room – Woodline Lebanon</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.woodline.lb/photos/dining-room2.jpeg</image:loc>
+      <image:title>Handcrafted bespoke dining room interior by Woodline, Lebanon</image:title>
+      <image:caption>Bespoke dining room interior – Woodline Lebanon</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.woodline.lb/photos/wall-panel-marble.jpeg</image:loc>
+      <image:title>Custom wood and marble wall panel installation by Woodline Lebanon</image:title>
+      <image:caption>Wood and marble wall panelling – Woodline Lebanon</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.woodline.lb/photos/loft-space.jpeg</image:loc>
+      <image:title>Bespoke loft space with custom wood staircase and joinery by Woodline Lebanon</image:title>
+      <image:caption>Custom loft interior – Woodline Lebanon</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.woodline.lb/photos/loft-space2.jpeg</image:loc>
+      <image:title>Custom loft interior with handcrafted wooden elements by Woodline Lebanon</image:title>
+      <image:caption>Bespoke loft with custom woodwork – Woodline Lebanon</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.woodline.lb/photos/window-bench.jpeg</image:loc>
+      <image:title>Bespoke built-in window bench seat with custom storage by Woodline Lebanon</image:title>
+      <image:caption>Built-in window bench – Woodline Lebanon</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.woodline.lb/photos/elevator.jpeg</image:loc>
+      <image:title>Custom wood-panelled private elevator interior crafted by Woodline Lebanon</image:title>
+      <image:caption>Custom wood elevator interior – Woodline Lebanon</image:caption>
+    </image:image>
+
+    <!-- Furniture -->
+    <image:image>
+      <image:loc>https://www.woodline.lb/photos/round-table.jpeg</image:loc>
+      <image:title>Handcrafted round solid wood dining table made to measure by Woodline Lebanon</image:title>
+      <image:caption>Custom round wood dining table – Woodline Lebanon</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.woodline.lb/photos/black-wardrobe.jpeg</image:loc>
+      <image:title>Custom black lacquered wardrobe with bespoke storage by Woodline Lebanon</image:title>
+      <image:caption>Bespoke black wardrobe – Woodline Lebanon</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.woodline.lb/photos/black-unit-open.jpeg</image:loc>
+      <image:title>Bespoke open storage unit in black finish custom made by Woodline Lebanon</image:title>
+      <image:caption>Custom open storage unit – Woodline Lebanon</image:caption>
+    </image:image>
+
+    <!-- Kitchen -->
+    <image:image>
+      <image:loc>https://www.woodline.lb/photos/kitchen.jpeg</image:loc>
+      <image:title>Custom made kitchen with bespoke cabinetry designed by Woodline, Lebanon</image:title>
+      <image:caption>Custom kitchen design – Woodline Lebanon</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.woodline.lb/photos/kitchen2.jpeg</image:loc>
+      <image:title>Luxury bespoke kitchen joinery and cabinetry by Woodline Zouk Mosbeh</image:title>
+      <image:caption>Bespoke kitchen – Woodline Zouk Mosbeh</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.woodline.lb/photos/kitchen-island.jpeg</image:loc>
+      <image:title>Handcrafted custom kitchen island in solid wood by Woodline Lebanon</image:title>
+      <image:caption>Custom solid wood kitchen island – Woodline Lebanon</image:caption>
+    </image:image>
+
+    <!-- Wine Cellar -->
+    <image:image>
+      <image:loc>https://www.woodline.lb/photos/wine-cellar-outside.jpeg</image:loc>
+      <image:title>Bespoke wine cellar exterior with custom wood frame by Woodline Lebanon</image:title>
+      <image:caption>Custom wine cellar exterior – Woodline Lebanon</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.woodline.lb/photos/wine-cellar-inside.jpeg</image:loc>
+      <image:title>Custom wine cellar interior with handcrafted wooden racks by Woodline Lebanon</image:title>
+      <image:caption>Bespoke wine cellar interior – Woodline Lebanon</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.woodline.lb/photos/wine-cellar-angle.jpeg</image:loc>
+      <image:title>Luxury bespoke wine cellar with custom joinery crafted by Woodline Lebanon</image:title>
+      <image:caption>Luxury custom wine cellar – Woodline Lebanon</image:caption>
+    </image:image>
+
+    <!-- Bathroom -->
+    <image:image>
+      <image:loc>https://www.woodline.lb/photos/bathroom.jpeg</image:loc>
+      <image:title>Custom bathroom furniture and bespoke wood vanity by Woodline Lebanon</image:title>
+      <image:caption>Bespoke bathroom vanity – Woodline Lebanon</image:caption>
+    </image:image>
+  </url>
+
+  <!-- ══ French ══ -->
+  <url>
+    <loc>https://www.woodline.lb/fr</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.woodline.lb/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.woodline.lb/fr"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.woodline.lb/ar"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.woodline.lb/"/>
+  </url>
+
+  <!-- ══ Arabic ══ -->
+  <url>
+    <loc>https://www.woodline.lb/ar</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.woodline.lb/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.woodline.lb/fr"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.woodline.lb/ar"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.woodline.lb/"/>
+  </url>
+
+</urlset>

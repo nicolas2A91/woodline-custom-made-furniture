@@ -3,31 +3,31 @@ import { supabase } from "./supabase.js";
 
 /* ─── PHOTOS ─────────────────────────────────────────────────────────── */
 const PHOTOS = [
-  { id: 1,  src: "/photos/villa-exterior.jpeg",    category: "Architecture" },
-  { id: 2,  src: "/photos/front-door.jpeg",         category: "Architecture" },
-  { id: 3,  src: "/photos/wood-beams.jpeg",         category: "Architecture" },
-  { id: 4,  src: "/photos/open-space.jpeg",         category: "Architecture" },
-  { id: 5,  src: "/photos/entrance-hall.jpeg",      category: "Interior"     },
-  { id: 6,  src: "/photos/hidden-door.jpeg",        category: "Interior"     },
-  { id: 7,  src: "/photos/living-room.jpeg",        category: "Interior"     },
-  { id: 8,  src: "/photos/living-room2.jpeg",       category: "Interior"     },
-  { id: 9,  src: "/photos/dining-room.jpeg",        category: "Interior"     },
-  { id: 10, src: "/photos/dining-room2.jpeg",       category: "Interior"     },
-  { id: 11, src: "/photos/wall-panel-marble.jpeg",  category: "Interior"     },
-  { id: 12, src: "/photos/loft-space.jpeg",         category: "Interior"     },
-  { id: 13, src: "/photos/loft-space2.jpeg",        category: "Interior"     },
-  { id: 14, src: "/photos/window-bench.jpeg",       category: "Interior"     },
-  { id: 15, src: "/photos/elevator.jpeg",           category: "Interior"     },
-  { id: 16, src: "/photos/round-table.jpeg",        category: "Furniture"    },
-  { id: 17, src: "/photos/black-wardrobe.jpeg",     category: "Furniture"    },
-  { id: 18, src: "/photos/black-unit-open.jpeg",    category: "Furniture"    },
-  { id: 19, src: "/photos/kitchen.jpeg",            category: "Kitchen"      },
-  { id: 20, src: "/photos/kitchen2.jpeg",           category: "Kitchen"      },
-  { id: 21, src: "/photos/kitchen-island.jpeg",     category: "Kitchen"      },
-  { id: 22, src: "/photos/wine-cellar-outside.jpeg",category: "Wine Cellar"  },
-  { id: 23, src: "/photos/wine-cellar-inside.jpeg", category: "Wine Cellar"  },
-  { id: 24, src: "/photos/wine-cellar-angle.jpeg",  category: "Wine Cellar"  },
-  { id: 25, src: "/photos/bathroom.jpeg",           category: "Bathroom"     },
+  { id: 1,  src: "/photos/villa-exterior.jpeg",    category: "Architecture", alt: "Woodline custom villa exterior with bespoke woodwork, Zouk Mosbeh Lebanon"       },
+  { id: 2,  src: "/photos/front-door.jpeg",         category: "Architecture", alt: "Woodline handcrafted solid wood front door, custom made in Lebanon"               },
+  { id: 3,  src: "/photos/wood-beams.jpeg",         category: "Architecture", alt: "Exposed custom wood beams ceiling crafted by Woodline, Lebanon"                   },
+  { id: 4,  src: "/photos/open-space.jpeg",         category: "Architecture", alt: "Bespoke open-plan architectural joinery by Woodline, Lebanon"                     },
+  { id: 5,  src: "/photos/entrance-hall.jpeg",      category: "Interior",     alt: "Custom entrance hall joinery with bespoke woodwork by Woodline Lebanon"           },
+  { id: 6,  src: "/photos/hidden-door.jpeg",        category: "Interior",     alt: "Woodline bespoke hidden door integrated into custom wall panelling, Lebanon"      },
+  { id: 7,  src: "/photos/living-room.jpeg",        category: "Interior",     alt: "Luxury custom living room interior designed and crafted by Woodline Lebanon"      },
+  { id: 8,  src: "/photos/living-room2.jpeg",       category: "Interior",     alt: "Bespoke living room furniture and wall units by Woodline, Zouk Mosbeh Lebanon"   },
+  { id: 9,  src: "/photos/dining-room.jpeg",        category: "Interior",     alt: "Custom dining room joinery and furniture crafted by Woodline Lebanon"             },
+  { id: 10, src: "/photos/dining-room2.jpeg",       category: "Interior",     alt: "Handcrafted bespoke dining room interior by Woodline, Lebanon"                   },
+  { id: 11, src: "/photos/wall-panel-marble.jpeg",  category: "Interior",     alt: "Custom wood and marble wall panel installation by Woodline Lebanon"               },
+  { id: 12, src: "/photos/loft-space.jpeg",         category: "Interior",     alt: "Bespoke loft space with custom wood staircase and joinery by Woodline Lebanon"   },
+  { id: 13, src: "/photos/loft-space2.jpeg",        category: "Interior",     alt: "Custom loft interior with handcrafted wooden elements by Woodline Lebanon"       },
+  { id: 14, src: "/photos/window-bench.jpeg",       category: "Interior",     alt: "Bespoke built-in window bench seat with custom storage by Woodline Lebanon"      },
+  { id: 15, src: "/photos/elevator.jpeg",           category: "Interior",     alt: "Custom wood-panelled private elevator interior crafted by Woodline Lebanon"      },
+  { id: 16, src: "/photos/round-table.jpeg",        category: "Furniture",    alt: "Handcrafted round solid wood dining table made to measure by Woodline Lebanon"   },
+  { id: 17, src: "/photos/black-wardrobe.jpeg",     category: "Furniture",    alt: "Custom black lacquered wardrobe with bespoke storage by Woodline Lebanon"        },
+  { id: 18, src: "/photos/black-unit-open.jpeg",    category: "Furniture",    alt: "Bespoke open storage unit in black finish custom made by Woodline Lebanon"       },
+  { id: 19, src: "/photos/kitchen.jpeg",            category: "Kitchen",      alt: "Custom made kitchen with bespoke cabinetry designed by Woodline, Lebanon"        },
+  { id: 20, src: "/photos/kitchen2.jpeg",           category: "Kitchen",      alt: "Luxury bespoke kitchen joinery and cabinetry by Woodline Zouk Mosbeh"            },
+  { id: 21, src: "/photos/kitchen-island.jpeg",     category: "Kitchen",      alt: "Handcrafted custom kitchen island in solid wood by Woodline Lebanon"             },
+  { id: 22, src: "/photos/wine-cellar-outside.jpeg",category: "Wine Cellar",  alt: "Bespoke wine cellar exterior with custom wood frame by Woodline Lebanon"         },
+  { id: 23, src: "/photos/wine-cellar-inside.jpeg", category: "Wine Cellar",  alt: "Custom wine cellar interior with handcrafted wooden racks by Woodline Lebanon"   },
+  { id: 24, src: "/photos/wine-cellar-angle.jpeg",  category: "Wine Cellar",  alt: "Luxury bespoke wine cellar with custom joinery crafted by Woodline Lebanon"      },
+  { id: 25, src: "/photos/bathroom.jpeg",           category: "Bathroom",     alt: "Custom bathroom furniture and bespoke wood vanity by Woodline Lebanon"           },
 ];
 
 // Hero slides — picks the most impactful photos
@@ -445,7 +445,7 @@ export default function App() {
       {lightbox !== null && (
         <div style={{ position:"fixed", inset:0, background:"rgba(28,22,16,0.96)", zIndex:999, display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", padding:"2rem", cursor:"pointer" }} onClick={() => setLightbox(null)}>
           <button style={{ position:"absolute", top:20, right:24, background:"none", border:"none", color:C.cream, fontSize:28, cursor:"pointer", fontFamily:"inherit" }}>✕</button>
-          <img src={PHOTOS[lightbox].src} alt="" style={{ maxWidth:"90vw", maxHeight:"82vh", objectFit:"contain", cursor:"default" }} onClick={e => e.stopPropagation()} />
+          <img src={PHOTOS[lightbox].src} alt={PHOTOS[lightbox].alt || `Woodline ${PHOTOS[lightbox].category} – custom furniture Lebanon`} style={{ maxWidth:"90vw", maxHeight:"82vh", objectFit:"contain", cursor:"default" }} onClick={e => e.stopPropagation()} />
           <div style={{ display:"flex", gap:16, marginTop:"1.5rem" }}>
             <button onClick={e => { e.stopPropagation(); setLightbox(l => (l - 1 + PHOTOS.length) % PHOTOS.length); }} style={{ background:C.wood, border:"none", color:C.cream, padding:"10px 22px", cursor:"pointer", fontFamily:"inherit", fontSize:18 }}>←</button>
             <button onClick={e => { e.stopPropagation(); setLightbox(l => (l + 1) % PHOTOS.length); }} style={{ background:C.wood, border:"none", color:C.cream, padding:"10px 22px", cursor:"pointer", fontFamily:"inherit", fontSize:18 }}>→</button>
@@ -505,7 +505,7 @@ export default function App() {
       <section id="home" style={{ position:"relative", height:"100vh", minHeight:640, display:"flex", alignItems:"center", overflow:"hidden" }} aria-label="Hero">
         {/* Slides */}
         {HERO_SLIDES.map((photo, i) => (
-          <img key={photo.id} src={photo.src} alt={`Woodline bespoke furniture – ${photo.category}`}
+          <img key={photo.id} src={photo.src} alt={photo.alt || `Woodline bespoke furniture – ${photo.category}`}
             className={`slide${i === slideIdx ? " active" : ""}`}
             style={{ position:"absolute", inset:0, width:"100%", height:"100%", objectFit:"cover", zIndex:0 }}
           />
@@ -620,7 +620,7 @@ export default function App() {
           {filtered.map((photo) => (
             <div key={photo.id} style={{ position:"relative", overflow:"hidden", aspectRatio:"4/3", cursor:"pointer" }} className="grid-item reveal"
               onClick={() => setLightbox(PHOTOS.findIndex(p => p.id === photo.id))}>
-              <img src={photo.src} alt={`Woodline ${t.cats[photo.category] || photo.category} – custom furniture Lebanon`} style={{ width:"100%", height:"100%", objectFit:"cover", display:"block", transition:"transform 0.55s ease" }} loading="lazy" />
+              <img src={photo.src} alt={photo.alt || `Woodline ${t.cats[photo.category] || photo.category} – custom furniture Lebanon`} style={{ width:"100%", height:"100%", objectFit:"cover", display:"block", transition:"transform 0.55s ease" }} loading="lazy" />
               <div style={{ position:"absolute", inset:0, background:"rgba(28,22,16,0)", display:"flex", flexDirection:"column", justifyContent:"flex-end", padding:"1.25rem", transition:"background 0.3s" }} className="grid-overlay">
                 <span style={{ fontSize:10, letterSpacing:3, textTransform:"uppercase", color:C.wood, marginBottom:4 }}>{t.cats[photo.category] || photo.category}</span>
                 <span style={{ position:"absolute", top:14, right:14, fontSize:18, color:C.cream, opacity:0, transition:"opacity 0.3s" }} className="grid-zoom">↗</span>
