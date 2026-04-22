@@ -1,8 +1,13 @@
+# robots.txt – Woodline (https://www.woodline.lb)
+# Generated for SEO optimization
+
 User-agent: *
 Allow: /
 
-# Block non-essential assets from crawl budget
+# Bloquer les dossiers inutiles au crawl
 Disallow: /src/
-Disallow: /*.map$
+Disallow: /node_modules/
+Disallow: /.git/
 
+# Sitemap
 Sitemap: https://www.woodline.lb/sitemap.xml
