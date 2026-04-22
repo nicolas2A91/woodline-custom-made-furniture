@@ -1,4 +1,4 @@
-# robots.txt – Woodline (https://www.woodline.lb)
+# robots.txt – Woodline (https://woodlinecustom-made-furniture.netlify.app)
 # Generated for SEO optimization
 
 User-agent: *
@@ -10,4 +10,4 @@ Disallow: /node_modules/
 Disallow: /.git/
 
 # Sitemap
-Sitemap: https://www.woodline.lb/sitemap.xml
+Sitemap: https://woodlinecustom-made-furniture.netlify.app/sitemap.xml
