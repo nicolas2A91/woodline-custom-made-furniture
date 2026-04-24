@@ -1,4 +1,10 @@
 import { useState, useEffect, useRef } from "react";
+import { createClient } from '@supabase/supabase-js';
+
+const supabase = createClient(
+  'https://rgxvdkwqsfpwheibxsrw.supabase.co',
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJneHZka3dxc2Zwd2hlaWJ4c3J3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUwNjAxMTEsImV4cCI6MjA5MDYzNjExMX0.o24mD2RisFm9cjyNXNTslBWZkAZFP31BvX5dabNfrAg'
+);
 
 /* ─── DATA ─────────────────────────────────────────────────────────────────── */
 const PHOTOS = [
@@ -631,9 +637,12 @@ export default function App() {
   const handleSubmit = async (e) => {
     e.preventDefault(); setSending(true); setError("");
     try {
-      // Simulated send — replace with actual Supabase call
-      await new Promise(r => setTimeout(r, 1200));
-      setSent(true); setFormData({ name: "", email: "", phone: "", message: "" });
+      const { error: sbError } = await supabase
+        .from("contacts")
+        .insert([{ name: formData.name, email: formData.email, phone: formData.phone || null, message: formData.message }]);
+      if (sbError) throw sbError;
+      setSent(true);
+      setFormData({ name: "", email: "", phone: "", message: "" });
       setTimeout(() => setSent(false), 6000);
     } catch { setError(t.contact.error); } finally { setSending(false); }
   };
