@@ -176,11 +176,11 @@ const T = {
 const JSON_LD = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "@id": "https://www.woodline.lb/#business",
+  "@id": "https://woodline-custom-made-furniture.vercel.app/#business",
   "name": "Woodline",
   "alternateName": "Woodline Custom Made Furniture",
   "description": "Custom made furniture and bespoke joinery in Zouk Mosbeh, Lebanon. 30 years of expertise in handcrafted wood interiors, kitchens, wine cellars, and luxury furniture.",
-  "url": "https://www.woodline.lb",
+  "url": "https://woodline-custom-made-furniture.vercel.app",
   "telephone": "+9613011175",
   "email": "fadi-kassabian@hotmail.com",
   "foundingDate": "1994",
@@ -219,10 +219,6 @@ const JSON_LD = {
     "reviewCount": "47",
     "bestRating": "5"
   },
-  "sameAs": [
-    "https://www.instagram.com/woodline.lb",
-    "https://www.facebook.com/woodline.lb"
-  ]
 };
 
 /* ─── COLORS & STYLES ─────────────────────────────────────────────────── */
@@ -342,7 +338,7 @@ export default function App() {
     setMeta("og:title",       titles[lang]);
     setMeta("og:description", descs[lang]);
     setMeta("og:type",        "website");
-    setMeta("og:url",         "https://www.woodline.lb");
+    setMeta("og:url",         "https://woodline-custom-made-furniture.vercel.app");
     setMeta("og:image",       "/photos/living-room.jpeg");
     setMeta("og:locale",      lang === "ar" ? "ar_LB" : lang === "fr" ? "fr_LB" : "en_LB");
     setMeta("twitter:card",   "summary_large_image", "name");
@@ -351,12 +347,12 @@ export default function App() {
     // Canonical
     let can = document.querySelector('link[rel="canonical"]');
     if (!can) { can = document.createElement("link"); can.rel = "canonical"; document.head.appendChild(can); }
-    can.href = "https://www.woodline.lb";
+    can.href = "https://woodline-custom-made-furniture.vercel.app";
     // Hreflang
     ["en","fr","ar"].forEach(l => {
       let hl = document.querySelector(`link[hreflang="${l}"]`);
       if (!hl) { hl = document.createElement("link"); hl.rel = "alternate"; hl.hreflang = l; document.head.appendChild(hl); }
-      hl.href = `https://www.woodline.lb/${l === "en" ? "" : l}`;
+      hl.href = `https://woodline-custom-made-furniture.vercel.app/${l === "en" ? "" : l}`;
     });
   }, [lang, t.dir]);
 
