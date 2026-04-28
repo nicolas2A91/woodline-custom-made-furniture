@@ -572,8 +572,10 @@ const css = `
     .about-content { padding: 4rem 6vw; }
     .contact-content { padding: 4rem 6vw; }
     .cat-detail-hero-overlay { padding: 2.5rem 3rem; }
+    .home-cats-grid { grid-template-columns: 1fr 1fr !important; padding: 0 1.5rem !important; }
   }
   @media(max-width: 480px) {
+    .home-cats-grid { grid-template-columns: 1fr !important; }
     .photo-grid { grid-template-columns: 1fr; }
     .wa-fab { bottom: 20px; right: 20px; }
     .hero-content { padding: 0 6vw 10vh; }
@@ -817,37 +819,36 @@ function HomePage({ t, lang, navigate, slideIdx, textIn, setSlideIdx }) {
         </div>
       </section>
 
-      {/* Categories preview — key visual block like intérieurs-privés */}
-      <section style={{ padding:"7rem 0 0" }}>
-        <div style={{ maxWidth:1440, margin:"0 auto", padding:"0 4rem 3rem" }}>
-          <div className="reveal">
-            <div className="section-eyebrow">{t.realisations.eyebrow}</div>
-            <h2 className="section-title">{t.realisations.title}</h2>
+      {/* Categories preview — compact elegant overview */}
+      <section style={{ padding:"7rem 0" }}>
+        <div style={{ maxWidth:1440, margin:"0 auto", padding:"0 4rem 3.5rem" }}>
+          <div className="reveal" style={{ display:"flex", alignItems:"flex-end", justifyContent:"space-between", flexWrap:"wrap", gap:"1rem" }}>
+            <div>
+              <div className="section-eyebrow">{t.realisations.eyebrow}</div>
+              <h2 className="section-title">{t.realisations.title}</h2>
+            </div>
+            <button className="btn-ghost" onClick={()=>navigate("realisations")}>
+              {lang==="ar"?"كل الأعمال":lang==="fr"?"Voir toutes les réalisations":"View all realisations"}
+              <svg width="32" height="1" viewBox="0 0 32 1"><line x1="0" y1="0.5" x2="32" y2="0.5" stroke="var(--wood)" strokeWidth="1"/></svg>
+            </button>
           </div>
         </div>
-        <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:2 }}>
-          {CATEGORIES.slice(0,4).map((cat,i) => (
-            <div key={cat.key} className="cat-item reveal" style={{ minHeight:480, cursor:"pointer", transition:`opacity 0.9s ${i*0.1}s, transform 0.9s ${i*0.1}s` }}
-              onClick={()=>{ window.scrollTo({top:0}); setTimeout(()=>{ /* navigate to page */ }, 0); }}
-            >
-              <img src={cat.cover} alt={cat.key} />
-              <div className="cat-overlay" onClick={()=>{ window.scrollTo({top:0,behavior:"smooth"}); }}>
-                <div>
-                  <div className="cat-label">{T["en"].cats[cat.key]}</div>
-                  <div className="cat-count">{cat.count} {t.catPage.photos}</div>
-                </div>
-              </div>
-              <div className="cat-arrow">
-                <svg width="12" height="8" viewBox="0 0 14 8" fill="none"><path d="M1 4H13M9 1L13 4L9 7" stroke="#F5F0E8" strokeWidth="0.9"/></svg>
+
+        {/* 3-column compact grid */}
+        <div className="home-cats-grid" style={{ maxWidth:1440, margin:"0 auto", padding:"0 4rem", display:"grid", gridTemplateColumns:"repeat(3,1fr)", gap:3 }}>
+          {CATEGORIES.map((cat, i) => (
+            <div key={cat.key} className="reveal" style={{ position:"relative", overflow:"hidden", aspectRatio:"4/5", cursor:"pointer", background:"var(--cream-dark)", transition:`opacity 0.9s ${i*0.08}s, transform 0.9s ${i*0.08}s` }}
+              onClick={()=>navigate("realisations", cat.key)}>
+              <img src={cat.cover} alt={cat.key} style={{ width:"100%", height:"100%", objectFit:"cover", display:"block", transition:"transform 1.1s cubic-bezier(0.25,0.46,0.45,0.94)" }}
+                onMouseEnter={e=>e.currentTarget.style.transform="scale(1.07)"}
+                onMouseLeave={e=>e.currentTarget.style.transform="none"} />
+              <div style={{ position:"absolute", inset:0, background:"linear-gradient(to top, rgba(20,14,8,0.75) 0%, rgba(20,14,8,0) 55%)", display:"flex", flexDirection:"column", justifyContent:"flex-end", padding:"2rem 2rem" }}>
+                <div style={{ fontFamily:"'Jost',sans-serif", fontSize:8, letterSpacing:3, textTransform:"uppercase", color:"rgba(245,240,232,0.4)", marginBottom:6 }}>0{i+1}</div>
+                <div style={{ fontFamily:"'Cormorant Garamond',serif", fontSize:"clamp(1.2rem,1.8vw,1.6rem)", fontWeight:300, fontStyle:"italic", color:"#F5F0E8" }}>{t.cats[cat.key]}</div>
+                <div style={{ fontFamily:"'Jost',sans-serif", fontSize:8, letterSpacing:2, textTransform:"uppercase", color:"rgba(245,240,232,0.35)", marginTop:5 }}>{cat.count} {t.catPage.photos}</div>
               </div>
             </div>
           ))}
-        </div>
-        <div style={{ textAlign:"center", padding:"4rem 0 7rem" }}>
-          <button className="btn-ghost" onClick={()=>{ window.scrollTo({top:0,behavior:"instant"}); }}>
-            {lang==="ar"?"كل الأعمال":lang==="fr"?"Voir toutes les réalisations":"View all realisations"}
-            <svg width="32" height="1" viewBox="0 0 32 1"><line x1="0" y1="0.5" x2="32" y2="0.5" stroke="var(--wood)" strokeWidth="1"/></svg>
-          </button>
         </div>
       </section>
 
@@ -861,7 +862,7 @@ function HomePage({ t, lang, navigate, slideIdx, textIn, setSlideIdx }) {
             </div>
             <h2 style={{ fontFamily:"'Cormorant Garamond',serif", fontSize:"clamp(2rem,3.5vw,3.2rem)", fontWeight:300, color:"rgba(245,240,232,0.92)", lineHeight:1.15, marginBottom:"2rem" }}>{t.about.title}</h2>
             <p style={{ fontFamily:"'Cormorant Garamond',serif", fontSize:"1.1rem", lineHeight:1.85, color:"rgba(245,240,232,0.45)", fontStyle:"italic", marginBottom:"2.5rem" }}>{t.about.p1}</p>
-            <button className="btn-ghost" style={{ color:"var(--wood-light)" }} onClick={()=>{ window.scrollTo({top:0,behavior:"instant"}); }}>
+            <button className="btn-ghost" style={{ color:"var(--wood-light)" }} onClick={()=>navigate("about")}>
               {lang==="ar"?"اقرأ المزيد":lang==="fr"?"En savoir plus":"Read more"}
               <svg width="32" height="1" viewBox="0 0 32 1"><line x1="0" y1="0.5" x2="32" y2="0.5" stroke="var(--wood-light)" strokeWidth="1"/></svg>
             </button>
