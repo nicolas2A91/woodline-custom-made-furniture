@@ -8,51 +8,41 @@ const supabase = createClient(
 
 /* ─── DATA ─────────────────────────────────────────────────────────────────── */
 const PHOTOS = [
-  { id: 1,  src: "/photos/villa-exterior.jpeg",        category: "Architecture", alt: "Woodline custom villa exterior, Zouk Mosbeh Lebanon" },
-  { id: 2,  src: "/photos/front-door.jpeg",             category: "Architecture", alt: "Woodline handcrafted solid wood front door" },
-  { id: 3,  src: "/photos/wood-beams.jpeg",             category: "Architecture", alt: "Exposed custom wood beams ceiling by Woodline" },
-  { id: 4,  src: "/photos/open-space.jpeg",             category: "Architecture", alt: "Bespoke open-plan architectural joinery by Woodline" },
-  { id: 26, src: "/photos/front-door-horizontal.jpeg",  category: "Architecture", alt: "Bespoke solid wood horizontal-slat front door by Woodline Lebanon" },
-  { id: 27, src: "/photos/villa-facade-slats.jpeg",     category: "Architecture", alt: "Custom vertical wood slat facade by Woodline Lebanon" },
-  { id: 28, src: "/photos/villa-stone-facade.jpeg",     category: "Architecture", alt: "Luxury villa exterior — wood cladding and stone by Woodline" },
-  { id: 5,  src: "/photos/entrance-hall.jpeg",          category: "Interior",     alt: "Custom entrance hall joinery by Woodline Lebanon" },
-  { id: 6,  src: "/photos/hidden-door.jpeg",            category: "Interior",     alt: "Bespoke hidden door in custom wall panelling" },
-  { id: 7,  src: "/photos/living-room.jpeg",            category: "Interior",     alt: "Luxury custom living room by Woodline Lebanon" },
-  { id: 8,  src: "/photos/living-room2.jpeg",           category: "Interior",     alt: "Bespoke living room furniture by Woodline" },
-  { id: 9,  src: "/photos/dining-room.jpeg",            category: "Interior",     alt: "Custom dining room joinery by Woodline Lebanon" },
-  { id: 10, src: "/photos/dining-room2.jpeg",           category: "Interior",     alt: "Handcrafted bespoke dining room by Woodline" },
-  { id: 29, src: "/photos/dining-marble-panel.jpeg",    category: "Interior",     alt: "Luxury dining room — marble table and wood wall panels by Woodline" },
-  { id: 11, src: "/photos/wall-panel-marble.jpeg",      category: "Interior",     alt: "Custom wood and marble wall panel by Woodline" },
-  { id: 12, src: "/photos/loft-space.jpeg",             category: "Interior",     alt: "Bespoke loft with custom wood staircase by Woodline" },
-  { id: 13, src: "/photos/loft-space2.jpeg",            category: "Interior",     alt: "Custom loft interior with handcrafted elements" },
-  { id: 14, src: "/photos/window-bench.jpeg",           category: "Interior",     alt: "Bespoke built-in window bench by Woodline" },
-  { id: 15, src: "/photos/elevator.jpeg",               category: "Interior",     alt: "Custom wood-panelled private elevator by Woodline" },
-  { id: 16, src: "/photos/round-table.jpeg",            category: "Furniture",    alt: "Handcrafted round solid wood dining table" },
-  { id: 17, src: "/photos/black-wardrobe.jpeg",         category: "Furniture",    alt: "Custom black lacquered wardrobe by Woodline" },
-  { id: 18, src: "/photos/black-unit-open.jpeg",        category: "Furniture",    alt: "Bespoke open storage unit by Woodline Lebanon" },
-  { id: 19, src: "/photos/kitchen.jpeg",                category: "Kitchen",      alt: "Custom kitchen with bespoke cabinetry by Woodline" },
-  { id: 20, src: "/photos/kitchen2.jpeg",               category: "Kitchen",      alt: "Luxury bespoke kitchen joinery by Woodline" },
-  { id: 21, src: "/photos/kitchen-island.jpeg",         category: "Kitchen",      alt: "Handcrafted custom kitchen island by Woodline" },
-  { id: 30, src: "/photos/kitchen-black.jpeg",          category: "Kitchen",      alt: "Modern custom kitchen — black granite and white lacquer by Woodline" },
-  { id: 31, src: "/photos/kitchen-open-plan.jpeg",      category: "Kitchen",      alt: "Open-plan custom kitchen with central island by Woodline Lebanon" },
-  { id: 22, src: "/photos/wine-cellar-outside.jpeg",    category: "Wine Cellar",  alt: "Bespoke wine cellar exterior by Woodline Lebanon" },
-  { id: 23, src: "/photos/wine-cellar-inside.jpeg",     category: "Wine Cellar",  alt: "Custom wine cellar interior by Woodline Lebanon" },
-  { id: 24, src: "/photos/wine-cellar-angle.jpeg",      category: "Wine Cellar",  alt: "Luxury bespoke wine cellar by Woodline Lebanon" },
-  { id: 25, src: "/photos/bathroom.jpeg",               category: "Bathroom",     alt: "Custom bathroom vanity by Woodline Lebanon" },
-  { id: 32, src: "/photos/bathroom-slats.jpeg",         category: "Bathroom",     alt: "Bespoke bathroom — fluted wood walls and stone pedestal sink by Woodline" },
-  { id: 33, src: "/photos/bathroom-slats-2.jpeg",       category: "Bathroom",     alt: "Custom wood-clad powder room with sculpted stone basin by Woodline" },
+  // Architecture (6)
+  { id: 1,  src: "/photos/villa-exterior.jpeg",       category: "Architecture", alt: "Woodline custom villa exterior — stone and wood cladding, Lebanon" },
+  { id: 2,  src: "/photos/villa-facade-slats.jpeg",   category: "Architecture", alt: "Custom vertical wood slat facade by Woodline Lebanon" },
+  { id: 3,  src: "/photos/villa-stone-facade.jpeg",   category: "Architecture", alt: "Luxury villa — wood bardage and natural stone by Woodline" },
+  { id: 4,  src: "/photos/front-door-horizontal.jpeg",category: "Architecture", alt: "Bespoke solid wood horizontal-slat front door by Woodline Lebanon" },
+  { id: 5,  src: "/photos/wood-beams.jpeg",           category: "Architecture", alt: "Custom exposed solid wood beams on vaulted ceiling by Woodline" },
+  { id: 6,  src: "/photos/open-space.jpeg",           category: "Architecture", alt: "Bespoke open-plan villa interior with custom joinery by Woodline" },
+  // Interior (8)
+  { id: 7,  src: "/photos/entrance-hall.jpeg",        category: "Interior",     alt: "Custom entrance hall — wood panels and chevron floor by Woodline" },
+  { id: 8,  src: "/photos/hidden-door.jpeg",          category: "Interior",     alt: "Bespoke hidden doors flush in custom fluted wood wall panelling" },
+  { id: 9,  src: "/photos/living-room.jpeg",          category: "Interior",     alt: "Luxury living room — bespoke wood slat wall and built-in joinery by Woodline" },
+  { id: 10, src: "/photos/dining-room2.jpeg",         category: "Interior",     alt: "Bespoke dining room — glass table and custom wood slat partition by Woodline" },
+  { id: 11, src: "/photos/dining-marble-panel.jpeg",  category: "Interior",     alt: "Luxury dining room — marble table, wood panels and decorative mirror by Woodline" },
+  { id: 12, src: "/photos/wall-panel-marble.jpeg",    category: "Interior",     alt: "Custom wood wall panel with marble shelf and bespoke mirror by Woodline" },
+  { id: 13, src: "/photos/loft-space.jpeg",           category: "Interior",     alt: "Bespoke loft space with vaulted ceiling and custom wood beams by Woodline" },
+  { id: 14, src: "/photos/elevator.jpeg",             category: "Interior",     alt: "Custom solid walnut wood-panelled private elevator by Woodline Lebanon" },
+  // Furniture (2)
+  { id: 15, src: "/photos/black-wardrobe.jpeg",       category: "Furniture",    alt: "Custom matte black built-in wardrobe under sloped ceiling by Woodline" },
+  { id: 16, src: "/photos/black-unit-open.jpeg",      category: "Furniture",    alt: "Bespoke black lacquered open room divider unit by Woodline Lebanon" },
+  // Kitchen (2)
+  { id: 17, src: "/photos/kitchen.jpeg",              category: "Kitchen",      alt: "Custom kitchen — black granite, white lacquer and open wood shelving by Woodline" },
+  { id: 18, src: "/photos/kitchen-island.jpeg",       category: "Kitchen",      alt: "Bespoke kitchen island — marble top with fluted wood front by Woodline" },
+  // Bathroom (1)
+  { id: 19, src: "/photos/bathroom.jpeg",             category: "Bathroom",     alt: "Custom bathroom — fluted wood walls and sculpted stone basin by Woodline" },
 ];
 
 const CATEGORIES = [
-  { key: "Architecture", cover: "/photos/villa-stone-facade.jpeg",   count: 7  },
-  { key: "Interior",     cover: "/photos/dining-marble-panel.jpeg",  count: 12 },
-  { key: "Furniture",    cover: "/photos/round-table.jpeg",          count: 3  },
-  { key: "Kitchen",      cover: "/photos/kitchen-black.jpeg",        count: 5  },
-  { key: "Wine Cellar",  cover: "/photos/wine-cellar-inside.jpeg",   count: 3  },
-  { key: "Bathroom",     cover: "/photos/bathroom-slats.jpeg",       count: 3  },
+  { key: "Architecture", cover: "/photos/villa-exterior.jpeg",      count: 6 },
+  { key: "Interior",     cover: "/photos/entrance-hall.jpeg",       count: 8 },
+  { key: "Furniture",    cover: "/photos/black-wardrobe.jpeg",      count: 2 },
+  { key: "Kitchen",      cover: "/photos/kitchen.jpeg",             count: 2 },
+  { key: "Bathroom",     cover: "/photos/bathroom.jpeg",            count: 1 },
 ];
 
-const HERO_SLIDES = [1, 7, 30, 22, 12, 29, 32].map(id => PHOTOS.find(p => p.id === id));
+const HERO_SLIDES = [1, 9, 17, 11, 13, 7, 19].map(id => PHOTOS.find(p => p.id === id));
 
 /* ─── TRANSLATIONS ──────────────────────────────────────────────────────────── */
 const T = {
@@ -61,7 +51,7 @@ const T = {
     nav: { home: "Home", realisations: "Realisations", about: "About", contact: "Contact" },
     cta: "Get a Quote",
     hero: { eyebrow: "Custom Made Furniture · Lebanon", title: "Bespoke joinery,\ncrafted for life.", sub: "Three decades of mastery transforming spaces across Lebanon." },
-    cats: { Architecture: "Architecture", Interior: "Interior", Furniture: "Furniture", Kitchen: "Kitchen", "Wine Cellar": "Wine Cellar", Bathroom: "Bathroom" },
+    cats: { Architecture: "Architecture", Interior: "Interior", Furniture: "Furniture", Kitchen: "Kitchen", Bathroom: "Bathroom" },
     catPage: { back: "All Realisations", photos: "photos" },
     about: {
       eyebrow: "Our Story",
@@ -88,7 +78,7 @@ const T = {
     nav: { home: "Accueil", realisations: "Réalisations", about: "À Propos", contact: "Contact" },
     cta: "Devis Gratuit",
     hero: { eyebrow: "Mobilier sur Mesure · Liban", title: "Menuiserie d'exception,\ncréée pour durer.", sub: "Trois décennies de maîtrise transformant les espaces au Liban." },
-    cats: { Architecture: "Architecture", Interior: "Intérieur", Furniture: "Mobilier", Kitchen: "Cuisine", "Wine Cellar": "Cave à Vin", Bathroom: "Salle de Bain" },
+    cats: { Architecture: "Architecture", Interior: "Intérieur", Furniture: "Mobilier", Kitchen: "Cuisine", Bathroom: "Salle de Bain" },
     catPage: { back: "Toutes les Réalisations", photos: "photos" },
     about: {
       eyebrow: "Notre Histoire",
@@ -115,7 +105,7 @@ const T = {
     nav: { home: "الرئيسية", realisations: "أعمالنا", about: "من نحن", contact: "اتصل بنا" },
     cta: "طلب عرض سعر",
     hero: { eyebrow: "أثاث مخصص · لبنان", title: "نجارة فريدة،\nمصنوعة للأبد.", sub: "ثلاثة عقود من الإتقان تحوّل المساحات في لبنان." },
-    cats: { Architecture: "معمار", Interior: "ديكور داخلي", Furniture: "أثاث", Kitchen: "مطبخ", "Wine Cellar": "قبو النبيذ", Bathroom: "حمام" },
+    cats: { Architecture: "معمار", Interior: "ديكور داخلي", Furniture: "أثاث", Kitchen: "مطبخ", Bathroom: "حمام" },
     catPage: { back: "جميع الأعمال", photos: "صور" },
     about: {
       eyebrow: "قصتنا",
@@ -877,7 +867,7 @@ function HomePage({ t, lang, navigate, slideIdx, textIn, setSlideIdx }) {
             </button>
           </div>
           <div className="reveal-right" style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:2 }}>
-            {[5, 16, 22, 3].map(id => {
+            {[7, 15, 18, 5].map(id => {
               const ph = PHOTOS.find(p=>p.id===id);
               return ph ? <div key={id} style={{ overflow:"hidden", aspectRatio:"1", background:"#2A1F14" }}><img src={ph.src} alt={ph.alt} style={{ width:"100%",height:"100%",objectFit:"cover",display:"block",transition:"transform 0.8s",filter:"brightness(0.8)" }} onMouseEnter={e=>e.currentTarget.style.transform="scale(1.06)"} onMouseLeave={e=>e.currentTarget.style.transform="none"}/></div> : null;
             })}
@@ -1061,7 +1051,7 @@ function AboutPage({ t, navigate }) {
 
       {/* Photo grid */}
       <div style={{ display:"grid", gridTemplateColumns:"repeat(4,1fr)", gap:2 }}>
-        {[7,5,11,16].map(id => {
+        {[9, 7, 11, 16].map(id => {
           const ph = PHOTOS.find(p=>p.id===id);
           return ph ? <div key={id} style={{ overflow:"hidden", aspectRatio:"1", background:"var(--cream-dark)" }}>
             <img src={ph.src} alt={ph.alt} style={{ width:"100%",height:"100%",objectFit:"cover",display:"block",transition:"transform 0.8s" }}
